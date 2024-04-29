@@ -11,7 +11,8 @@
 <body>
 　　　　　　　　<p　 </p>
     <p class="text-center">【無料体験お申し込みフォーム】</p>
-    <p class="text-center">※体験を希望するスクールの開催日時を「練習スケジュール」で確認してから送信してください</p>
+    <p class="text-center">※体験を希望するスクールの開催日時を<br>
+        「練習スケジュール」で確認後、送信してください</p>
     <form class="w-75 mx-auto">
         <p class="mt-3">体験希望の日時（例：4月21日の高宮スクール）</p>
         <div>
@@ -36,8 +37,8 @@
         </div>
         <p class="mt-3"　required>参加希望のクラス</p>
         <div>
-        <input id="radio-a" type="radio" name="class" value="スタートアップクラス" checked><label for="radio-a">スタートアップクラス</label>
-        <input id="radio-b" type="radio" name="class" value="スキルアップクラス"><label for="radio-b">スキルアップクラス</label>
+        <input id="radio-a" type="radio" name="clas" value="スタートアップクラス" checked><label for="radio-a">スタートアップクラス</label><br>
+        <input id="radio-b" type="radio" name="clas" value="スキルアップクラス"><label for="radio-b">スキルアップクラス</label><br>
     </div>
         <p class="mt-3"　required>当スクールを知ったきっかけ</p>
         <div>
@@ -90,11 +91,13 @@
 
         $(function () {
             $('form').submit(function () {
-                const name    = $('input[name="name"]').val();
-                const bangou = $('input[name="bangou"]').val();
-                const temperature  = $('input[name="temperature"]').val();
-                const shushoujou  = $('input[name="shushoujou"]').val();
-                const family = $('input[name="family"]').val();
+                const school    = $('input[name="school"]').val();
+                const name = $('input[name="name"]').val();
+                const furigana  = $('input[name="furigana"]').val();
+                const gakunen  = $('input[name="gakunen"]').val();
+                const team = $('input[name="team"]').val();
+                const clas  = $('input[name="clas"]').val();
+                const know  = $('input[name="know"]').val();
                 const msg = `${name}\n${bangou}\n${temperature}\n${shushoujou}\n${family}`;
                 sendText(msg);
                 return false;
